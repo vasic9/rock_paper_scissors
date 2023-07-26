@@ -12,8 +12,31 @@
             const randomIndex = Math.floor(Math.random() * elementList.length);
             return elementList[randomIndex];
         }
-        const randomElement = getComputerChoice();
-        console.log(randomElement);
+        const letsPlay = () => {
+            const compare = () => {
+            if (computerSelection === playerSelectionLow) {
+                alert("draw!")
+            } else if (computerSelection === "paper" && playerSelectionLow === "rock" || computerSelection === "rock" && playerSelectionLow === "paper") {
+                alert("paper wins!")
+            } else if (computerSelection === "paper" && playerSelectionLow === "scissors" || computerSelection === "scissors" && playerSelectionLow === "paper") {
+                alert ("scissors wins!")
+            } else if (computerSelection === "scissors" && playerSelectionLow === "rock" || computerSelection === "rock" && playerSelectionLow === "scissors") {
+                alert ("rock wins!")
+            }
+        }
+
+            let playerSelection = prompt("rock, paper or scissors?");
+            let playerSelectionLow = playerSelection.toLowerCase();
+            let computerSelection = getComputerChoice();
+
+            if(playerSelectionLow === "rock" || playerSelectionLow === "paper" || playerSelectionLow === "scissors") {
+                compare();
+            } else {
+                alert("You have to choose between rock, paper or scissors")
+            }
+            console.log(computerSelection);
+        }
+        letsPlay();
     </script>
 </body>
 </html>
